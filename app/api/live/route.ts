@@ -1,6 +1,6 @@
 import axios from "axios";
 import { NextRequest, NextResponse } from "next/server";
-import { ChzzLiveResponse } from "@/types/live";
+import { ChzzLiveResponse } from "@/types/chzzk/live";
 import { cookies } from "next/headers";
 
 export const GET = async (req: NextRequest) => {

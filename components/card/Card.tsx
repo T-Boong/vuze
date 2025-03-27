@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ChzzLiveContent } from "@/types/live";
+import { ChzzLiveContent } from "@/types/chzzk/live";
 interface CardProps {
   chzzLiveContent: ChzzLiveContent;
 }

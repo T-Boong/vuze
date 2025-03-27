@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ChzzUserResponse } from "@/types/user";
+import { ChzzUserResponse } from "@/types/chzzk/user";
 const getChzzUser = async (token: string) => {
   const response = await axios.get<ChzzUserResponse>("/api/user", {
     headers: {

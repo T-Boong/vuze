@@ -1,10 +1,17 @@
 "use client";
 
 import Card from "@/components/card/Card";
-import { useLive } from "@/query/useLive";
+import { useLive } from "@/queries/chzzk/useLive";
+import { useLive as useYoutubeLive } from "@/queries/youtube/useLive";
 
 const MainPage = () => {
   const { data, isLoading, error } = useLive();
+  const {
+    data: yData,
+    isLoading: yIsLoading,
+    error: yError,
+  } = useYoutubeLive();
+  console.log(yData, yIsLoading, yError);
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;

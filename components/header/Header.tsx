@@ -1,5 +1,5 @@
 "use client";
-import { useUser } from "@/query/useUsert";
+import { useUser } from "@/queries/chzzk/useUser";
 import Image from "next/image";
 
 const Header = () => {

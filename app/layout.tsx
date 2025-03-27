@@ -29,7 +29,7 @@ export default function RootLayout({
         style={{
           backgroundColor: "#000000",
         }}
-        className={`w-screen h-screen ${geistSans.variable} ${geistMono.variable} antialiased `}
+        className={` h-screen ${geistSans.variable} ${geistMono.variable} antialiased `}
       >
         <Providers>
           <Header />

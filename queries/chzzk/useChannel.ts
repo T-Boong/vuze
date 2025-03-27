@@ -1,9 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
-import getChannels from "@/network/channel/channel";
+import getChannels from "@/networks/chzzk/channel/channel";
+import QUERY_KEYS from "@/constants/queryKeys";
 
 const useChannel = (channelIds: string[]) => {
   const { data, isLoading, error } = useQuery({
-    queryKey: ["channels"],
+    queryKey: [QUERY_KEYS.CHZZK_CHANNELS],
     queryFn: () => getChannels(channelIds),
   });
 

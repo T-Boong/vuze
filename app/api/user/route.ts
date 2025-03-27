@@ -1,6 +1,6 @@
 import axios from "axios";
 import { NextResponse } from "next/server";
-import { ChzzUserResponse } from "@/types/user";
+import { ChzzUserResponse } from "@/types/chzzk/user";
 
 export const GET = async (req: Request) => {
   const token = req.headers.get("Authorization")?.split(" ")[1];

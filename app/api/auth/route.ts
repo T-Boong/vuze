@@ -1,4 +1,4 @@
-import { ChzzkAuthResponse } from "@/types/auth";
+import { ChzzkAuthResponse } from "@/types/chzzk/auth";
 import axios from "axios";
 import { NextResponse } from "next/server";
 
