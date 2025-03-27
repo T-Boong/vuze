@@ -1,10 +1,10 @@
 "use client";
 
 import { useMutation } from "@tanstack/react-query";
-import { putAccessToken } from "@/network/auth/auth";
-import { authAtom } from "@/store/auth/authAtom";
+import { putAccessToken } from "@/networks/chzzk/auth/auth";
+import { authAtom } from "@/stores/auth/authAtom";
 import { useSetAtom } from "jotai";
-import { ChzzkAuthResponse } from "@/types/auth";
+import { ChzzkAuthResponse } from "@/types/chzzk/auth";
 const usePutAccessToken = () => {
   const setAtom = useSetAtom(authAtom);
   return useMutation<ChzzkAuthResponse, Error, { code: string; state: string }>(

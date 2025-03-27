@@ -2,7 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
-import { usePutAccessToken } from "@/query/useAuth";
+import { usePutAccessToken } from "@/queries/chzzk/useAuth";
 import { useRouter } from "next/navigation";
 
 export const AuthContents = () => {
