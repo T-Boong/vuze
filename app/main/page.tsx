@@ -1,28 +1,40 @@
 "use client";
 
-import Card from "@/components/card/Card";
+import ChzzkCard from "@/components/card/ChzzkCard";
+import VuzeGrandOpenBanner from "@/components/card/OpenBanner";
+import YoutubeCard from "@/components/card/YoutubeCard";
+import ItemsWrapper from "@/components/wrapper/ItemsWrapper";
+import youtubeData from "@/constants/mocks/youtubeData";
 import { useLive } from "@/queries/chzzk/useLive";
-import { useLive as useYoutubeLive } from "@/queries/youtube/useLive";
 
 const MainPage = () => {
-  const { data, isLoading, error } = useLive();
-  const {
-    data: yData,
-    isLoading: yIsLoading,
-    error: yError,
-  } = useYoutubeLive();
-  console.log(yData, yIsLoading, yError);
-
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+  const { data } = useLive();
 
   return (
-    <div className="w-full h-[calc(100vh-60px)] flex flex-col items-center justify-center">
-      <div className="flex flex-wrap gap-4">
-        {data?.content.data.map((item) => (
-          <Card key={item.liveId} chzzLiveContent={item} />
-        ))}
-      </div>
+    <div className="w-full flex flex-col items-center justify-center gap-y-8">
+      <VuzeGrandOpenBanner />
+      {/* 치지직 */}
+      <section className="flex flex-col gap-y-4">
+        <span className="font-gmarket font-bold ml-8 text-[21px]">
+          치지직 인기 스트리밍 🔥
+        </span>
+        <ItemsWrapper platform="chzzk">
+          {data?.content.data?.map((item) => (
+            <ChzzkCard key={item.liveId} chzzLiveContent={item} />
+          ))}
+        </ItemsWrapper>
+      </section>
+      {/* 유튜브 */}
+      <section className="flex flex-col gap-y-4">
+        <span className="font-gmarket font-bold ml-8 text-[21px]">
+          유튜브 인기 스트리밍 🔥
+        </span>
+        <ItemsWrapper platform="youtube">
+          {youtubeData.items.map((item) => (
+            <YoutubeCard key={item.id.videoId} data={item} />
+          ))}
+        </ItemsWrapper>
+      </section>
     </div>
   );
 };

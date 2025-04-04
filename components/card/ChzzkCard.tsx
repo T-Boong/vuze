@@ -3,12 +3,16 @@ import { ChzzLiveContent } from "@/types/chzzk/live";
 interface CardProps {
   chzzLiveContent: ChzzLiveContent;
 }
-const Card = ({ chzzLiveContent }: CardProps) => {
-  console.log(chzzLiveContent.liveThumbnailImageUrl);
+const ChzzkCard = ({ chzzLiveContent }: CardProps) => {
   return (
-    <div>
+    <li
+      className="cursor-pointer"
+      onClick={() =>
+        window.open(`https://chzzk.naver.com/live/${chzzLiveContent.channelId}`)
+      }
+    >
       <div
-        className="w-[300px] h-[180px] bg-gray-200 rounded-lg p-2"
+        className="w-[300px] h-[180px] bg-gray-200 rounded-lg p-2 border-1 border-gray-800"
         style={{
           backgroundImage: `url(${chzzLiveContent.liveThumbnailImageUrl.replace(
             "{type}",
@@ -31,7 +35,7 @@ const Card = ({ chzzLiveContent }: CardProps) => {
       </div>
       <div className="mt-2 flex items-center gap-2 w-[300px] ">
         <div
-          className="w-[40px] h-[40px] bg-white rounded-full box-border"
+          className="w-[40px] h-[40px] bg-white rounded-full box-border shrink-0"
           style={{
             backgroundImage: `url(${chzzLiveContent.channelImageUrl})`,
             backgroundSize: "cover",
@@ -42,7 +46,7 @@ const Card = ({ chzzLiveContent }: CardProps) => {
           <p className="text-sm text-gray-100">{chzzLiveContent.liveTitle}</p>
           <p className="text-sm text-gray-500">{chzzLiveContent.channelName}</p>
           <div className="flex items-center gap-2">
-            <span className="text-[10px] text-[rgb(157,165,182)] bg-[rgba(46,48,51,0.6)] rounded-lg px-2 py-1">
+            <span className="text-[10px] text-[rgb(182,157,158)] bg-[rgba(46,48,51,0.6)] rounded-lg px-2 py-1">
               {chzzLiveContent.liveCategoryValue}
             </span>
             {chzzLiveContent.tags.slice(0, 3).map((tag) => (
@@ -56,8 +60,8 @@ const Card = ({ chzzLiveContent }: CardProps) => {
           </div>
         </div>
       </div>
-    </div>
+    </li>
   );
 };
 
-export default Card;
+export default ChzzkCard;
