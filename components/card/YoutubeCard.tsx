@@ -11,7 +11,7 @@ const YoutubeCard = ({ data }: YoutubeCardProps) => {
   const channelData = youtubeChannelData.items.find(
     (channel) => channel.id === data.snippet.channelId
   );
-  console.log(channelData);
+
   return (
     <li className="cursor-pointer flex flex-col gap-2">
       <div

@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
       "nng-phinf.pstatic.net",
       "livecloud-thumb.akamaized.net",
       "yt3.ggpht.com",
+      "ngoyfhynryooaqgoqyek.supabase.co",
     ], // 필요한 도메인 추가
   },
 };
