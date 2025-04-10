@@ -1,9 +1,10 @@
 import Image from "next/image";
-
+import { signIn } from "next-auth/react";
 const SocialLoginField = () => {
   const handleSocialLogin = (provider: "kakao" | "naver" | "google") => {
-    console.log(`소셜 로그인 시도: ${provider}`);
-    // TODO: 소셜 로그인 리다이렉트 or API 연동
+    signIn(provider, {
+      callbackUrl: "/",
+    });
   };
   return (
     <div>
