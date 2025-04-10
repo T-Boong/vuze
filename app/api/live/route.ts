@@ -9,7 +9,7 @@ export const GET = async (req: NextRequest) => {
 
   try {
     const response = await axios.get<ChzzLiveResponse>(
-      process.env.NEXT_PUBLIC_CHZZK_API_URL + "/open/v1/lives",
+      process.env.CHZZK_API_URL + "/open/v1/lives",
       {
         params: {
           size: size,
@@ -17,8 +17,8 @@ export const GET = async (req: NextRequest) => {
         },
         headers: {
           "Content-Type": "application/json",
-          "Client-Id": process.env.NEXT_PUBLIC_CHZZK_CLIENT_ID,
-          "Client-Secret": process.env.NEXT_PUBLIC_CHZZK_CLIENT_SECRET,
+          "Client-Id": process.env.CHZZK_CLIENT_ID,
+          "Client-Secret": process.env.CHZZK_CLIENT_SECRET,
         },
       }
     );

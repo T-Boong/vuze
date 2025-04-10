@@ -9,10 +9,10 @@ export const GET = async (req: NextRequest) => {
 
   try {
     const response = await axios.get<YoutubeChannelsResponse>(
-      process.env.NEXT_PUBLIC_YOUTUBE_API_URL + "/channels",
+      process.env.YOUTUBE_API_URLL + "/channels",
       {
         params: {
-          key: process.env.NEXT_PUBLIC_YOUTUBE_API_KEY,
+          key: process.env.YOUTUBE_API_KEY,
           id,
           part,
         },

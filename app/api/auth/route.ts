@@ -6,11 +6,11 @@ export const POST = async (req: Request) => {
   const { code, state } = await req.json();
   try {
     const response = await axios.post<ChzzkAuthResponse>(
-      process.env.NEXT_PUBLIC_CHZZK_API_URL + "/auth/v1/token",
+      process.env.CHZZK_API_URL + "/auth/v1/token",
       {
         grantType: "authorization_code",
-        clientId: process.env.NEXT_PUBLIC_CHZZK_CLIENT_ID,
-        clientSecret: process.env.NEXT_PUBLIC_CHZZK_CLIENT_SECRET,
+        clientId: process.env.CHZZK_CLIENT_ID,
+        clientSecret: process.env.CHZZK_CLIENT_SECRET,
         code: code,
         state: state,
       }

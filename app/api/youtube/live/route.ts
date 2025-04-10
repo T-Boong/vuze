@@ -12,7 +12,7 @@ export const GET = async (req: NextRequest) => {
 
   try {
     const response = await axios.get<YoutubeSearchResponse>(
-      process.env.NEXT_PUBLIC_YOUTUBE_API_URL + "/search",
+      process.env.YOUTUBE_API_URLL + "/search",
       {
         params: {
           part,
@@ -20,7 +20,7 @@ export const GET = async (req: NextRequest) => {
           type,
           eventType,
           maxResults,
-          key: process.env.NEXT_PUBLIC_YOUTUBE_API_KEY,
+          key: process.env.YOUTUBE_API_KEY,
         },
       }
     );

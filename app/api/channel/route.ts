@@ -6,15 +6,15 @@ export const GET = async (req: Request) => {
   const channelIds = searchParams.get("channelIds")?.split(",");
   try {
     const response = await axios.get(
-      process.env.NEXT_PUBLIC_CHZZK_API_URL + "/open/v1/channels",
+      process.env.CHZZK_API_URL + "/open/v1/channels",
       {
         params: {
           channelIds: channelIds,
         },
         headers: {
           "Content-Type": "application/json",
-          "Client-Id": process.env.NEXT_PUBLIC_CHZZK_CLIENT_ID,
-          "Client-Secret": process.env.NEXT_PUBLIC_CHZZK_CLIENT_SECRET,
+          "Client-Id": process.env.CHZZK_CLIENT_ID,
+          "Client-Secret": process.env.CHZZK_CLIENT_SECRET,
         },
       }
     );
