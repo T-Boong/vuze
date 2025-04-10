@@ -10,7 +10,6 @@ const nextConfig: NextConfig = {
       "ngoyfhynryooaqgoqyek.supabase.co",
     ], // 필요한 도메인 추가
   },
-  output: "export",
   basePath: `/${repo}`,
   assetPrefix: `/${repo}/`,
 };
